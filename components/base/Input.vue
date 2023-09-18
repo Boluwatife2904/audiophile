@@ -26,9 +26,9 @@ const { placeholder = "" } = defineProps<Props>();
 
 	&__element {
 		padding: 1.65rem 2.4rem;
-		border: 1px solid $input-border;
+		border: 0.1rem solid $input-border;
 		outline: none;
-		letter-spacing: -0.25px;
+		letter-spacing: -0.025rem;
 		transition: all .3s linear;
 
 		&::placeholder {

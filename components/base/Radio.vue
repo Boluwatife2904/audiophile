@@ -34,11 +34,11 @@ const isChecked = computed(() => value === modelValue.value);
 			& + label {
 				min-height: 5.6rem;
 				cursor: pointer;
-				border: 1px solid $input-border;
+				border: 0.1rem solid $input-border;
 				padding: 1.8rem 1.6rem 1.8rem 5.2rem;
 				transition: all 0.2s ease;
 
-				@media screen and (min-width: 600px) {
+				@media screen and (min-width: $tabler) {
 					min-height: 3.2rem;
 				}
 

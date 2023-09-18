@@ -4,6 +4,13 @@ const footerSocials = [
 	{ icon: "twitter", name: "twitter", url: "#" },
 	{ icon: "instagram", name: "instagram", url: "#" },
 ];
+
+const footerLinks = [
+	{ title: "home", name: "index" },
+	{ title: "headphones", name: "categories-slug" },
+	{ title: "speakers", name: "categories-slug" },
+	{ title: "earphones", namee: "categories-slug" },
+];
 </script>
 
 <template>
@@ -14,10 +21,9 @@ const footerSocials = [
 					<IconLogo />
 				</div>
 				<ul class="footer__links flex items-center flex-wrap">
-					<li><a href="#" target="_blank" rel="noopener noreferrer" class="base-link base-link--underline base-link--navigation">home</a></li>
-					<li><a href="#" target="_blank" rel="noopener noreferrer" class="base-link base-link--underline base-link--navigation">headphones</a></li>
-					<li><a href="#" target="_blank" rel="noopener noreferrer" class="base-link base-link--underline base-link--navigation">speakers</a></li>
-					<li><a href="#" target="_blank" rel="noopener noreferrer" class="base-link base-link--underline base-link--navigation">earphones</a></li>
+					<li v-for="link in footerLinks" :key="link.title">
+						<NuxtLink :to="{ name: link.name, ...(link.title !== 'home' && { params: { slug: link.title } }) }" class="base-link base-link--underline base-link--navigation">{{ link.title }}</NuxtLink>
+					</li>
 				</ul>
 			</div>
 			<div class="footer--middle">

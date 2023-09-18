@@ -50,6 +50,7 @@ $flex-direction: column, row;
 // Item alignment classes
 $items-alignment: (
 	"items-center": center,
+	"items-start": start,
 );
 
 @each $name,
@@ -158,6 +159,8 @@ $value in $opacities {
 
 // Image reset
 .img-fluid {
+	display: block;
+	margin: 0 auto;
 	max-height: 100%;
 	max-width: 100%;
 	height: auto;

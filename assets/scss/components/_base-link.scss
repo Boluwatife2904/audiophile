@@ -1,5 +1,4 @@
 .base-link {
-	// color: $black;
 	text-transform: uppercase;
 	font-weight: 700;
 	transition: all 0.2s ease;
@@ -12,8 +11,7 @@
 
 	&--shop {
 		@include typography(1.3rem, normal);
-		color: $white;
-		opacity: 0.5;
+		color: rgba(0,0,0,0.5);
 		letter-spacing: 0.1rem;
 
 	}

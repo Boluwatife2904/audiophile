@@ -4,7 +4,7 @@
 	<section class="cta">
 		<div class="container cta__container flex items-center">
 			<div class="cta--left flex flex-column">
-				<h2 class="cta__heading weight-700 text-uppercase">
+				<h2 class="heading-2 weight-700 text-uppercase text-black">
 					Bringing you the
 					<span class="text-primary">best</span>
 					audio gear
@@ -21,10 +21,10 @@
 
 <style lang="scss" scoped>
 .cta {
-	padding: 120px 0;
+	padding: 12rem 0;
 
 	@media screen and (min-width: $desktop) {
-		padding: 200px 0;
+		padding: 16rem 0;
 	}
 
 	&__container {
@@ -68,11 +68,6 @@
 			max-width: 54rem;
 			min-height: 58.8rem;
 		}
-	}
-
-	&__heading {
-		@include typography(2.8rem, normal, 4rem, 4.4rem);
-		@include letter-spacing(0.1rem, 0.1429rem);
 	}
 }
 </style>

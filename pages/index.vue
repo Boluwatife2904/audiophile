@@ -1,7 +1,19 @@
 <script setup lang="ts"></script>
 
 <template>
-	<div>Home Page</div>
+	<div class="home">
+		<div class="home-hero"></div>
+		<div class="home-content">
+			<CategoriesList />
+		</div>
+	</div>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.home {
+	&-content {
+		padding: 12rem 0 0;
+		margin-bottom: 4rem;
+	}
+}
+</style>
