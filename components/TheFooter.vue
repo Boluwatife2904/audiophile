@@ -27,10 +27,10 @@ const footerLinks = [
 				</ul>
 			</div>
 			<div class="footer--middle">
-				<p class="text-white body-regular opacity-50 weight-500">Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
+				<p class="text-white-light body-regular weight-500">Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
 			</div>
 			<div class="footer--bottom flex items-center content-between">
-				<p class="footer__copyright text-white opacity-50 weight-700">Copyright 2021. All Rights Reserved</p>
+				<p class="footer__copyright text-white-light weight-700">Copyright 2021. All Rights Reserved</p>
 				<ul class="footer__socials flex items-center">
 					<li v-for="social in footerSocials" :key="social.name" class="footer__social">
 						<a :href="social.url" target="_blank" rel="noopener noreferrer" class="base-link base-link--navigation">

@@ -4,11 +4,15 @@ interface Props {
 }
 
 defineProps<Props>();
+
+const viewProduct = (productSlug: string) => {
+	navigateTo({ name: "products-slug", params: { slug: productSlug } });
+};
 </script>
 
 <template>
 	<div class="product-item flex items-center content-between">
-		<div class="product-item__image br-8 flex items-start content-center bg-gray position-relative">
+		<!-- <div class="product-item__image br-8 flex items-start content-center bg-gray position-relative">
 			<img :src="product.image.desktop" :alt="`${product.name} image`" class="img-fluid desktop-image" />
 			<img :src="product.image.mobile" :alt="`${product.name} image`" class="img-fluid mobile-image" />
 			<span class="block position-absolute">
@@ -25,19 +29,12 @@ defineProps<Props>();
 					</defs>
 				</svg>
 			</span>
-		</div>
+		</div> -->
+		<ProductItemImage :product="product" usage="category" />
 		<div class="product-item__text flex flex-column">
-			<div class="product-item--top flex flex-column items-start">
-				<span v-if="product.new" class="body-overline text-uppercase text-primary">new product</span>
-				<h2 class="heading-2 text-black text-uppercase weight-700 product-item__name">
-					{{ product.name.toLowerCase().replace(product.category, "") }}
-					<br />
-					{{ product.category }}
-				</h2>
-			</div>
+			<ProductItemName :product="product" usage="product" />
 			<div class="product-item--bottom flex flex-column items-start">
-				<p class="body-regular text-black opacity-50 weight-500">{{ product.description }}</p>
-				<BaseButton>see product</BaseButton>
+				<BaseButton @click="viewProduct(product.slug)">see product</BaseButton>
 			</div>
 		</div>
 	</div>
@@ -58,32 +55,32 @@ defineProps<Props>();
 		}
 	}
 
-	&__image {
-		width: 100%;
-		padding: 4rem;
-		height: 35.2rem;
+	// &__image {
+	// 	width: 100%;
+	// 	padding: 4rem;
+	// 	height: 35.2rem;
 
-		@media screen and (min-width: $desktop) {
-			max-width: 54rem;
-			height: 56rem;
-			padding: 8rem;
-		}
+	// 	@media screen and (min-width: $desktop) {
+	// 		max-width: 54rem;
+	// 		height: 56rem;
+	// 		padding: 8rem;
+	// 	}
 
-		img {
-			object-fit: scale-down;
-		}
+	// 	img {
+	// 		object-fit: scale-down;
+	// 	}
 
-		span {
-			display: block;
-			bottom: -2.5rem;
-			left: 50%;
-			transform: translate(-50%, -5%);
+	// 	span {
+	// 		display: block;
+	// 		bottom: -2.5rem;
+	// 		left: 50%;
+	// 		transform: translate(-50%, -5%);
 
-			@media screen and (min-width: $desktop) {
-				bottom: 1rem;
-			}
-		}
-	}
+	// 		@media screen and (min-width: $desktop) {
+	// 			bottom: 1rem;
+	// 		}
+	// 	}
+	// }
 
 	&--top,
 	&--bottom {
@@ -95,7 +92,6 @@ defineProps<Props>();
 	}
 
 	&__text {
-		@include gap(3.2rem);
 		max-width: 44.5rem;
 		text-align: center;
 
@@ -104,28 +100,28 @@ defineProps<Props>();
 		}
 	}
 
-	&--top {
-		@include gap(1.6rem);
-	}
-
 	&--bottom {
-		@include gap(2.4rem, 2.4rem, 4rem);
+		margin-top: 2.4rem;
+
+		@media screen and (min-width: $desktop) {
+			margin-top: 4rem;
+		}
 	}
 }
 
-.desktop-image {
-	display: none;
+// .desktop-image {
+// 	display: none;
 
-	@media screen and (min-width: $desktop) {
-		display: block;
-	}
-}
+// 	@media screen and (min-width: $desktop) {
+// 		display: block;
+// 	}
+// }
 
-.mobile-image {
-	display: block;
+// .mobile-image {
+// 	display: block;
 
-	@media screen and (min-width: $desktop) {
-		display: none;
-	}
-}
+// 	@media screen and (min-width: $desktop) {
+// 		display: none;
+// 	}
+// }
 </style>

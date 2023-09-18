@@ -6,7 +6,9 @@ $colors: (
 	"gray": $gray,
 	"gray-light": $gray-light,
 	"white": $white,
+	"white-light": $white-light,
 	"black": $black,
+	"black-light": $black-light,
 );
 
 @each $name,
@@ -21,7 +23,7 @@ $value in $colors {
 }
 
 // Display classes
-$displays: flex, grid;
+$displays: flex, grid, block;
 
 @each $display in $displays {
 	.#{$display} {
@@ -140,6 +142,19 @@ $value in $border-radiuses {
 	}
 }
 
+// Gap classes
+$gaps: (
+	"4": 0.4rem,
+	"8": 0.8rem,
+);
+
+@each $name,
+$value in $gaps {
+	.gap-#{$name} {
+		@include gap($value);
+	}
+}
+
 // Opacity classes
 $opacities: (
 	"50": 50%,
@@ -178,4 +193,21 @@ $value in $opacities {
 
 .ml-auto {
 	margin-left: auto;
+}
+
+// PRODUCT IMAGES
+.desktop-image {
+	display: none;
+
+	@media screen and (min-width: $desktop) {
+		display: block;
+	}
+}
+
+.mobile-image {
+	display: block;
+
+	@media screen and (min-width: $desktop) {
+		display: none;
+	}
 }
