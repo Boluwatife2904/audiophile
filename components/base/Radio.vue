@@ -38,7 +38,7 @@ const isChecked = computed(() => value === modelValue.value);
 				padding: 1.8rem 1.6rem 1.8rem 5.2rem;
 				transition: all 0.2s ease;
 
-				@media screen and (min-width: $tabler) {
+				@media screen and (min-width: $tablet) {
 					min-height: 3.2rem;
 				}
 
