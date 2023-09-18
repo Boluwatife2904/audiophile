@@ -1,0 +1,178 @@
+// Backgrounds and colors classes
+$colors: (
+	"primary": $primary,
+	"secondary": $secondary,
+	"primary-light": $primary-light,
+	"gray": $gray,
+	"gray-light": $gray-light,
+	"white": $white,
+	"black": $black,
+);
+
+@each $name,
+$value in $colors {
+	.text-#{$name} {
+		color: $value !important;
+	}
+
+	.bg-#{$name} {
+		background: $value !important;
+	}
+}
+
+// Display classes
+$displays: flex, grid;
+
+@each $display in $displays {
+	.#{$display} {
+		display: $display;
+	}
+}
+
+// Flex wrap classes
+$flex-wraps: wrap, nowrap;
+
+@each $wrap in $flex-wraps {
+	.flex-#{$wrap} {
+		flex-wrap: $wrap;
+	}
+}
+
+// Flex direction classes
+$flex-direction: column, row;
+
+@each $direction in $flex-direction {
+	.flex-#{$direction} {
+		flex-direction: $direction;
+	}
+}
+
+// Item alignment classes
+$items-alignment: (
+	"items-center": center,
+);
+
+@each $name,
+$value in $items-alignment {
+	.#{$name} {
+		align-items: $value;
+	}
+}
+
+// Content alignment classes
+$content-alignment: (
+	"content-center": center,
+	"content-between": space-between,
+);
+
+@each $name,
+$value in $content-alignment {
+	.#{$name} {
+		justify-content: $value;
+	}
+}
+
+// Position classes
+$positions: relative, absolute, fixed;
+
+@each $position in $positions {
+	.position-#{$position} {
+		position: $position;
+	}
+}
+
+// Text alignment classes
+$text-alignments: left, right, center, justify;
+
+@each $alignment in $text-alignments {
+	.text-#{$alignment} {
+		text-align: $alignment;
+	}
+}
+
+// text-decoration utilities
+$text-decorations: none, underline;
+
+@each $text-decoration in $text-decorations {
+	.decoration-#{$text-decoration} {
+		text-decoration: $text-decoration !important;
+	}
+}
+
+// Font weight classes
+$font-weights: 200, 300, 400, 500, 600, 700, 800;
+
+@each $font-weight in $font-weights {
+	.weight-#{$font-weight} {
+		font-weight: $font-weight;
+	}
+}
+
+// Text transform classes
+$text-transforms: uppercase, capitalize;
+
+@each $text-transform in $text-transforms {
+	.text-#{$text-transform} {
+		text-transform: $text-transform;
+	}
+}
+
+// cursor utilities
+$cursors: pointer, not-allowed;
+
+@each $cursor in $cursors {
+	.cursor-#{$cursor} {
+		cursor: $cursor !important;
+	}
+}
+
+// Border radius
+$border-radiuses: (
+	"1": 0.1rem,
+	"8": 0.8rem,
+);
+
+@each $name,
+$value in $border-radiuses {
+	.br-#{$name} {
+		border-radius: $value !important;
+	}
+}
+
+// Opacity classes
+$opacities: (
+	"50": 50%,
+);
+
+@each $name,
+$value in $opacities {
+	.opacity-#{$name} {
+		opacity: $value;
+	}
+}
+
+// Line height reset
+.lh-0 {
+	line-height: 0;
+}
+
+// Image reset
+.img-fluid {
+	max-height: 100%;
+	max-width: 100%;
+	height: auto;
+}
+
+// margin classes
+.mx-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mr-auto {
+	margin-right: auto;
+}
+
+.ml-auto {
+	margin-left: auto;
+}

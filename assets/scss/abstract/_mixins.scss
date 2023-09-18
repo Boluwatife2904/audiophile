@@ -1,0 +1,61 @@
+@mixin typography($mobile-fs, $mobile-lh, $tablet-fs: $mobile-fs, $tablet-lh: $mobile-lh, $desktop-fs: $tablet-fs, $desktop-lh: $tablet-lh) {
+	font-size: $mobile-fs;
+	line-height: $mobile-lh;
+
+	@media screen and (min-width: $tablet) {
+		font-size: $tablet-fs;
+		line-height: $tablet-lh;
+	}
+
+	@media screen and (min-width: $desktop) {
+		font-size: $desktop-fs;
+		line-height: $desktop-lh;
+	}
+}
+
+@mixin gap($mobile-gap, $tablet-gap: $mobile-gap, $desktop-gap: $tablet-gap) {
+	gap: $mobile-gap;
+
+	@media screen and (min-width: $tablet) {
+		gap: $tablet-gap;
+	}
+
+	@media screen and (min-width: $desktop) {
+		gap: $desktop-gap;
+	}
+}
+
+@mixin component-size($mobile-height, $mobile-width, $tablet-height: $mobile-height, $tablet-width: $mobile-width) {
+	height: $mobile-height;
+	width: $mobile-width;
+
+	@media screen and (min-width: $tablet) {
+		height: $tablet-height;
+		width: $tablet-width;
+	}
+}
+
+@mixin component-variant($background, $color, $border, $background-hover: $background, $color-hover: $color, $border-hover: $border) {
+	background-color: $background;
+	color: $color;
+	border: 0.1rem solid $border;
+	transition: all 0.2s ease;
+
+	&:hover {
+		background-color: $background-hover;
+		color: $color-hover;
+		border-color: $border-hover;
+	}
+}
+
+@mixin letter-spacing($mobile-spacing, $tablet-spacing: $mobile-spacing, $desktop-spacing: $tablet-spacing) {
+	letter-spacing: $mobile-spacing;
+
+	@media screen and (min-width: $tablet) {
+		letter-spacing: $tablet-spacing;
+	}
+
+	@media screen and (min-width: $desktop) {
+		letter-spacing: $desktop-spacing;
+	}
+}

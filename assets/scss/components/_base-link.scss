@@ -1,0 +1,49 @@
+.base-link {
+	// color: $black;
+	text-transform: uppercase;
+	font-weight: 700;
+	transition: all 0.2s ease;
+
+	&--navigation {
+		@include typography(1.3rem, 2.5rem);
+		color: $white;
+		letter-spacing: 0.3rem;
+	}
+
+	&--shop {
+		@include typography(1.3rem, normal);
+		color: $white;
+		opacity: 0.5;
+		letter-spacing: 0.1rem;
+
+	}
+
+	&:hover {
+		color: $primary;
+	}
+
+	&--underline {
+		position: relative;
+		display: inline-block;
+
+		&::after {
+			background-color: $primary;
+			position: absolute;
+			bottom: 0;
+			content: "";
+			height: 0.1rem;
+			width: 100%;
+			left: 0;
+			transform: scaleX(0);
+			transform-origin: bottom right;
+			transition: transform .25s ease-out;
+		}
+
+		&:hover {
+			&::after {
+				transform: scaleX(1);
+				transform-origin: bottom left;
+			}
+		}
+	}
+}
