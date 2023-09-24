@@ -4,7 +4,7 @@ const route = useRoute();
 const categoryName = route.params.slug;
 const categoryExists = products.some((product) => product.category === categoryName);
 
-if (!categoryExists) throw createError({ statusCode: "404", statusMessage: "Category does not exist", fatal: true });
+if (!categoryExists) throw createError({ statusCode: 404, statusMessage: "Category does not exist", fatal: true });
 
 const productsBelongingToCategory = products.filter((product) => product.category === categoryName).reverse();
 </script>

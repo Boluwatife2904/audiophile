@@ -5,12 +5,12 @@
 
 .heading-2 {
 	@include typography(2.8rem, normal, 4rem, 4.4rem);
-	@include letter-spacing(0.1rem, 0.1429rem)
+	@include letter-spacing(0.1rem, 0.1429rem);
 }
 
 .heading-3 {
-	@include typography(3.2rem, 3.6rem);
-	letter-spacing: 0.115rem;
+	@include typography(2.4rem, 3.6rem, 3.2rem, 3.6rem);
+	@include letter-spacing(0.086rem, 0.114rem);
 }
 
 .heading-4 {

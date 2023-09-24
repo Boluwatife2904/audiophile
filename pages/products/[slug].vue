@@ -6,10 +6,12 @@ const productSlug = route.params.slug;
 
 const product = products.find((product) => product.slug === productSlug);
 
-if (typeof product === "undefined") throw createError({ statusCode: "404", statusMessage: "Product not found", fatal: true });
+if (typeof product === "undefined") throw createError({ statusCode: 404, statusMessage: "Product not found", fatal: true });
+
+const count = ref(1);
 
 const goBack = () => {
-	router.back(-1);
+	router.back();
 };
 </script>
 
@@ -22,6 +24,11 @@ const goBack = () => {
 					<ProductItemImage :product="product" usage="product" />
 					<div class="product-page__text">
 						<ProductItemName :product="product" usage="product" />
+						<h3 class="product-page__price heading-6 font-weight-700">$ {{ Number(product.price).toLocaleString() }}</h3>
+						<div class="product-page__add flex gap-16">
+							<ProductAddToCart :count="count" :update-state="false" />
+							<BaseButton>add to cart</BaseButton>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -42,13 +49,16 @@ const goBack = () => {
 			</div>
 			<div class="product-page__gallery grid">
 				<div class="first br-8">
-					<img :src="product.gallery.first.desktop" :alt="`${product.name} image`" class="img-fluid" />
+					<img :src="product.gallery.first.mobile" :alt="`${product.name} image`" class="mobile-image img-fluid" />
+					<img :src="product.gallery.first.desktop" :alt="`${product.name} image`" class="desktop-image img-fluid" />
 				</div>
 				<div class="second br-8">
-					<img :src="product.gallery.second.desktop" :alt="`${product.name} image`" class="img-fluid" />
+					<img :src="product.gallery.second.mobile" :alt="`${product.name} image`" class="mobile-image img-fluid" />
+					<img :src="product.gallery.second.desktop" :alt="`${product.name} image`" class="desktop-image img-fluid" />
 				</div>
 				<div class="third br-8">
-					<img :src="product.gallery.third.desktop" :alt="`${product.name}  image`" class="img-fluid" />
+					<img :src="product.gallery.third.mobile" :alt="`${product.name}  image`" class="mobile-image img-fluid" />
+					<img :src="product.gallery.third.desktop" :alt="`${product.name}  image`" class="desktop-image img-fluid" />
 				</div>
 			</div>
 			<div class="product-page__others"></div>
@@ -76,6 +86,18 @@ const goBack = () => {
 
 		@media screen and (min-width: $tablet) {
 			flex-direction: row;
+		}
+	}
+
+	&__price {
+		margin: 2.4rem 0 3.1rem;
+
+		@media screen and (min-width: $tablet) {
+			margin: 3.2rem 0 3.1rem;
+		}
+
+		@media screen and (min-width: $desktop) {
+			margin: 3.2rem 0 4.7rem;
 		}
 	}
 
@@ -107,23 +129,36 @@ const goBack = () => {
 	}
 
 	&__gallery {
-		@include gap(3.2rem);
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: 28rem 28rem;
+		@include gap(2rem, 2rem 1.8rem, 3.2rem 3rem);
+		grid-template-rows: repeat(4, 17.4rem);
+
+		@media screen and (min-width: $tablet) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 17.4rem);
+		}
+
+		@media screen and (min-width: $desktop) {
+			grid-template-rows: 28rem 28rem;
+		}
 
 		div {
 			overflow: hidden;
 		}
 
 		& > div:nth-child(3) {
-			grid-row: 1 / span 2;
-			grid-column: 2 / span 2;
+			grid-row: 3 / span 2;
+			// grid-column: 1 / span 2;
+
+			@media screen and (min-width: $tablet) {
+				grid-row: 1 / span 2;
+				grid-column: 2 / span 2;
+			}
 		}
 
 		img {
 			width: 100%;
 			height: 100%;
-			// object-fit: fill;
+			// object-fit: 50%;
 			object-fit: cover;
 			// object-position: top;
 		}
