@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const { setCurrentModal } = useStore();
-const { currentModal } = storeToRefs(useStore());
 </script>
 
 <template>
@@ -41,6 +40,10 @@ const { currentModal } = storeToRefs(useStore());
 }
 
 .base-nav {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+
 	&__content {
 		@include padding(3.5rem 0 3.7rem);
 		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -49,32 +52,11 @@ const { currentModal } = storeToRefs(useStore());
 	&__toggler {
 		@include visibility(flex, flex, none);
 		gap: 0.3rem;
-		// gap: 1rem;
-		// width: 1.6rem;
-		// height: 0.3rem;
 
 		span {
 			width: 1.6rem;
 			height: 0.3rem;
 		}
-
-		// &::before,
-		// &::after {
-		// 	content: "";
-		// 	background-color: $white;
-		// 	position: absolute;
-		// 	height: 0.3rem;
-		// 	width: 1.6rem;
-		// 	left: 0;
-		// }
-
-		// &::before {
-		// 	top: -0.6rem;
-		// }
-
-		// &::after {
-		// 	bottom: -0.6rem;
-		// }
 	}
 
 	&--left {
