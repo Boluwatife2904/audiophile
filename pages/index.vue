@@ -4,7 +4,9 @@
 	<div class="home">
 		<div class="home-hero"></div>
 		<div class="home-content">
-			<CategoriesList />
+			<div class="container">
+				<CategoriesList />
+			</div>
 		</div>
 	</div>
 </template>

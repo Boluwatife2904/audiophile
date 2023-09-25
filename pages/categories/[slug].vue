@@ -11,7 +11,7 @@ const productsBelongingToCategory = products.filter((product) => product.categor
 
 <template>
 	<div class="category-page">
-		<div class="category-page__header bg-secondary text-center">
+		<div class="category-page__header bg-black text-center">
 			<h2 class="heading-2 text-white text-uppercase">{{ categoryName }}</h2>
 		</div>
 		<div class="category-page__content">

@@ -43,4 +43,11 @@ export default defineNuxtConfig({
 		},
 	},
 	css: ["@/assets/scss/index.scss", "@/assets/scss/fonts.scss"],
+	modules: ["@pinia/nuxt"],
+	pinia: {
+		autoImports: ["defineStore", "storeToRefs"],
+	},
+	imports: {
+		dirs: ["stores"],
+	},
 });

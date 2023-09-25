@@ -1,0 +1,25 @@
+.slideUp-leave-from,
+.slideUp-enter-to {
+	transform: translate(0, 0);
+}
+
+.slideUp-enter-from,
+.slideUp-leave-to {
+	opacity: 0;
+	transform: translate(0, 3.2rem);
+}
+
+.slideUp-enter-active,
+.slideUp-leave-active {
+	transition: all 0.25s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.15s linear;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+	opacity: 0;
+}

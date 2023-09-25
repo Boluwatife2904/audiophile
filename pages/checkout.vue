@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const router = useRouter();
+const { setCurrentModal } = useStore();
 
 const checkoutForm: Record<string, string> = reactive({
 	name: "",
@@ -33,7 +34,7 @@ const goBack = () => {
 <template>
 	<div class="checkout-page">
 		<div class="container flex flex-column items-start">
-			<button class="body-regular text-black-light weight-500" @click="goBack">Go back</button>
+			<button class="body-regular text-black-light weight-500 checkout-page__back" @click="goBack">Go back</button>
 			<div class="checkout-page__content grid items-start">
 				<div class="checkout-page__form bg-white br-8">
 					<h3 class="heading-3 text-uppercase weight-700 checkout-page__title">checkout</h3>
@@ -67,7 +68,7 @@ const goBack = () => {
 					</section>
 				</div>
 				<div class="checkout-page__summary bg-white br-8">
-					<BaseButton size="full">continue & pay</BaseButton>
+					<BaseButton size="full" @click="setCurrentModal('order')">continue & pay</BaseButton>
 				</div>
 			</div>
 		</div>
@@ -80,6 +81,10 @@ const goBack = () => {
 
 	.container {
 		@include gap(2.4rem, 2.4rem, 3.8rem);
+	}
+
+	&__back:hover {
+		color: $primary !important;
 	}
 
 	&__title {

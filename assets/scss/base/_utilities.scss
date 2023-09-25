@@ -121,7 +121,7 @@ $text-transforms: uppercase, capitalize;
 }
 
 // cursor utilities
-$cursors: pointer, not-allowed;
+$cursors: pointer, default, not-allowed;
 
 @each $cursor in $cursors {
 	.cursor-#{$cursor} {

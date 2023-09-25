@@ -4,13 +4,6 @@ const footerSocials = [
 	{ icon: "twitter", name: "twitter", url: "#" },
 	{ icon: "instagram", name: "instagram", url: "#" },
 ];
-
-const footerLinks = [
-	{ title: "home", name: "index" },
-	{ title: "headphones", name: "categories-slug" },
-	{ title: "speakers", name: "categories-slug" },
-	{ title: "earphones", namee: "categories-slug" },
-];
 </script>
 
 <template>
@@ -18,13 +11,9 @@ const footerLinks = [
 		<div class="container">
 			<div class="footer--top flex content-between">
 				<div class="footer__logo position-relative">
-					<IconLogo />
+					<AppLogo />
 				</div>
-				<ul class="footer__links flex items-center flex-wrap">
-					<li v-for="link in footerLinks" :key="link.title">
-						<NuxtLink :to="{ name: link.name, ...(link.title !== 'home' && { params: { slug: link.title } }) }" class="base-link base-link--underline base-link--navigation">{{ link.title }}</NuxtLink>
-					</li>
-				</ul>
+				<AppLinks />
 			</div>
 			<div class="footer--middle">
 				<p class="text-white-light body-regular weight-500">Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
@@ -71,8 +60,7 @@ const footerLinks = [
 		}
 	}
 
-	&--bottom,
-	&__links {
+	&--bottom {
 		flex-direction: column;
 
 		@media screen and (min-width: $tablet) {
@@ -82,10 +70,6 @@ const footerLinks = [
 
 	&--bottom {
 		@include gap(4.8rem 3rem, 3.2rem 3rem);
-	}
-
-	&__links {
-		@include gap(2rem 3.4rem);
 	}
 
 	&__logo {
@@ -106,7 +90,7 @@ const footerLinks = [
 			}
 
 			@media screen and (min-width: $desktop) {
-				top: -7.5rem;
+				// top: -6rem;
 			}
 		}
 	}

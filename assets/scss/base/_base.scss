@@ -15,4 +15,8 @@ body {
 	font-size: 1.6rem;
 	line-height: normal;
 	box-sizing: border-box;
+
+	&.overflow-hidden {
+		overflow: hidden;
+	}
 }
