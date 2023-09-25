@@ -29,28 +29,16 @@ const { usage = "category" } = defineProps<Props>();
 
 	&__new {
 		&--category {
-			margin-bottom: 1.6rem;
+			@include margin-bottom(1.6rem);
 		}
 
 		&--product {
-			margin-bottom: 2.4rem;
-
-			@media screen and (min-width: $tablet) {
-				margin-bottom: 1.7rem;
-			}
-
-			@media screen and (min-width: $desktop) {
-				margin-bottom: 1.6rem;
-			}
+			@include margin-bottom(2.4rem, 1.7rem, 1.6rem);
 		}
 	}
 
 	&__name {
-		margin-bottom: 2.4rem;
-
-		@media screen and (min-width: $tablet) {
-			margin-bottom: 3.2rem;
-		}
+		@include margin-bottom(2.4rem, 3.2rem);
 	}
 }
 </style>

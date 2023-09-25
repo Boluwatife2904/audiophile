@@ -1,17 +1,13 @@
 .container {
+	@include padding(0 2.4rem, 0 4rem, 0 3.2rem);
 	max-width: 115rem;
-	padding: 0 2.4rem;
 	margin: 0 auto;
 
 	@media screen and (min-width: $tablet) {
 		max-width: 119rem;
-		padding: 0 4rem;
-
 	}
 
 	@media screen and (min-width: $desktop) {
 		max-width: 117.4rem;
-		padding: 0 3.2rem;
-
 	}
 }

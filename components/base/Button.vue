@@ -1,13 +1,15 @@
 <script setup lang="ts">
 interface Props {
 	variant?: string;
+	size?: string;
 }
 
-const { variant = "primary" } = defineProps<Props>();
+const { variant = "primary", size = "normal" } = defineProps<Props>();
 
 const buttonClasses = computed(() => {
-	return ["variant"].map((item) => {
+	return ["variant", "size"].map((item) => {
 		if (item === "variant") return `base-button--${variant}`;
+		if (item === "size") return `base-button--${size}`;
 	});
 });
 </script>
@@ -34,6 +36,10 @@ const buttonClasses = computed(() => {
 
 	&--secondary-outline {
 		@include component-variant(transparent, $black, $black, $black, $white, $black);
+	}
+
+	&--full {
+		width: 100%;
 	}
 }
 </style>

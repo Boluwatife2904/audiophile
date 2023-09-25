@@ -1,18 +1,21 @@
 <script setup lang="ts">
 interface Props {
+	type?: string;
 	id: string;
 	label?: string;
 	name: string;
 	placeholder?: string;
 }
 
-const { placeholder = "" } = defineProps<Props>();
+const { type = "text", placeholder = "" } = defineProps<Props>();
+
+const modelValue = defineModel<string>();
 </script>
 
 <template>
 	<div class="base-input flex flex-column">
 		<label :for="id" class="base-input__label weight-700">{{ label }}</label>
-		<input type="text" :name="name" :id="id" :placeholder="placeholder" class="base-input__element weight-700 body-small br-8 bg-white" />
+		<input :type="type" :name="name" :id="id" :placeholder="placeholder" v-model="modelValue" class="base-input__element weight-700 body-small br-8 bg-white" />
 	</div>
 </template>
 
@@ -29,7 +32,8 @@ const { placeholder = "" } = defineProps<Props>();
 		border: 0.1rem solid $input-border;
 		outline: none;
 		letter-spacing: -0.025rem;
-		transition: all .3s linear;
+		transition: all 0.3s linear;
+		width: 100%;
 
 		&::placeholder {
 			color: rgba(0, 0, 0, 0.4);

@@ -30,15 +30,7 @@ const productsBelongingToCategory = products.filter((product) => product.categor
 	}
 
 	&__content {
-		padding: 6.4rem 0 12rem;
-
-		@media screen and (min-width: $tablet) {
-			padding: 12rem 0;
-		}
-
-		@media screen and (min-width: $desktop) {
-			padding: 16rem 0;
-		}
+		@include padding(6.4rem 0 12rem, 12rem 0, 16rem 0);
 
 		.container {
 			@include gap(12rem, 12rem, 16rem);

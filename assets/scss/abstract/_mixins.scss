@@ -59,3 +59,28 @@
 		letter-spacing: $desktop-spacing;
 	}
 }
+
+@mixin margin-bottom($mobile-mb, $tablet-mb: mobile-mb, $desktop-mb : $tablet-mb) {
+	margin-bottom: $mobile-mb;
+
+	@media screen and (min-width: $tablet) {
+		margin-bottom: $tablet-mb;
+	}
+
+	@media screen and (min-width: $desktop) {
+		margin-bottom: $tablet-mb;
+	}
+}
+
+@mixin padding($mobile-padding, $tablet-padding: $mobile-padding, $desktop-padding: $tablet-padding) {
+	padding: $mobile-padding;
+
+	@media screen and (min-width: $tablet) {
+		padding: $tablet-padding;
+	}
+
+	@media screen and (min-width: $desktop) {
+		padding: $tablet-padding;
+	}
+
+}

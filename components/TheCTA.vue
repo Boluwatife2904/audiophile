@@ -21,11 +21,7 @@
 
 <style lang="scss" scoped>
 .cta {
-	padding: 12rem 0;
-
-	@media screen and (min-width: $desktop) {
-		padding: 16rem 0;
-	}
+	@include padding(12rem 0, 12rem 0, 16rem 0);
 
 	&__container {
 		flex-direction: column-reverse;

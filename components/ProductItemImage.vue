@@ -50,12 +50,11 @@ const { usage = "category" } = defineProps<Props>();
 	}
 
 	&--category {
-		padding: 4rem;
+		@include padding(4rem, 4rem, 8rem);
 		height: 35.2rem;
 
 		@media screen and (min-width: $desktop) {
 			max-width: 54rem;
-			padding: 8rem;
 			height: 56rem;
 		}
 	}

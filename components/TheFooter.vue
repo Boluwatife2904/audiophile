@@ -44,30 +44,13 @@ const footerLinks = [
 </template>
 
 <style lang="scss" scoped>
-@mixin margin-bottom($mobile-mb, $tablet-mb, $desktop-mb) {
-	margin-bottom: $mobile-mb;
-
-	@media screen and (min-width: $tablet) {
-		margin-bottom: $tablet-mb;
-	}
-
-	@media screen and (min-width: $desktop) {
-		margin-bottom: $tablet-mb;
-	}
-}
-
 .footer {
+	@include padding(5.2rem 0 3.8rem, 6rem 0 4.6rem, 7.5rem 0 4.8rem);
 	// min-height: 36.5rem;
-	padding: 5.2rem 0 3.8rem;
 	text-align: center;
 
 	@media screen and (min-width: $tablet) {
 		text-align: left;
-		padding: 6rem 0 4.6rem;
-	}
-
-	@media screen and (min-width: $desktop) {
-		padding: 7.5rem 0 4.8rem;
 	}
 
 	&--top {
