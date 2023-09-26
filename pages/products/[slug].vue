@@ -8,62 +8,70 @@ const product = products.find((product) => product.slug === productSlug);
 
 if (typeof product === "undefined") throw createError({ statusCode: 404, statusMessage: "Product not found", fatal: true });
 
+const { addItemToCart } = useCartStore();
 const count = ref(1);
 
 const goBack = () => {
 	router.back();
 };
+
+const addToCart = () => {
+	addItemToCart({ productId: product.id, count: count.value });
+	count.value = 1;
+};
 </script>
 
 <template>
 	<div class="product-page">
-		<div class="product-page__content container flex flex-column">
-			<div class="product-page__header flex flex-column items-start">
-				<button class="product-page__back body-regular text-black-light weight-500" @click="goBack">Go back</button>
-				<div class="product-page__product flex items-center">
-					<ProductItemImage :product="product" usage="product" />
-					<div class="product-page__text">
-						<ProductItemName :product="product" usage="product" />
-						<h3 class="product-page__price heading-6 font-weight-700">$ {{ Number(product.price).toLocaleString() }}</h3>
-						<div class="product-page__add flex gap-16">
-							<ProductAddToCart :count="count" :update-state="false" />
-							<BaseButton>add to cart</BaseButton>
+		<div class="container">
+			<div class="product-page__content flex flex-column">
+				<div class="product-page__header flex flex-column items-start">
+					<button class="product-page__back body-regular text-black-light weight-500" @click="goBack">Go back</button>
+					<div class="product-page__product flex items-center">
+						<ProductItemImage :product="product" usage="product" />
+						<div class="product-page__text">
+							<ProductItemName :product="product" usage="product" />
+							<h3 class="product-page__price heading-6 font-weight-700">$ {{ Number(product.price).toLocaleString() }}</h3>
+							<div class="product-page__add flex gap-16">
+								<ProductAddToCart :count="count" :update-state="false" usage="product" @increase-count="count += 1" @decrese-count="count -= 1" />
+								<BaseButton @click="addToCart">add to cart</BaseButton>
+							</div>
 						</div>
 					</div>
 				</div>
+				<div class="product-page__features flex">
+					<div class="product-page__feature flex flex-column">
+						<h3 class="heading-3 weight-700 text-uppercase">features</h3>
+						<p class="text-black-light body-regular weight-500" v-html="product.features"></p>
+					</div>
+					<div class="product-page__box flex flex-column">
+						<h3 class="heading-3 weight-700 text-uppercase">in the box</h3>
+						<ul class="flex flex-column gap-8">
+							<li v-for="item in product.includes" :key="item.item" class="body-regular flex items-center">
+								<span class="weight-700 text-primary">{{ item.quantity }}X</span>
+								<span class="weight-500 text-black-light">{{ item.item }}</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="product-page__gallery grid">
+					<div class="first br-8">
+						<img :src="product.gallery.first.mobile" :alt="`${product.name} image`" class="mobile-image img-fluid" />
+						<img :src="product.gallery.first.desktop" :alt="`${product.name} image`" class="desktop-image img-fluid" />
+					</div>
+					<div class="second br-8">
+						<img :src="product.gallery.second.mobile" :alt="`${product.name} image`" class="mobile-image img-fluid" />
+						<img :src="product.gallery.second.desktop" :alt="`${product.name} image`" class="desktop-image img-fluid" />
+					</div>
+					<div class="third br-8">
+						<img :src="product.gallery.third.mobile" :alt="`${product.name}  image`" class="mobile-image img-fluid" />
+						<img :src="product.gallery.third.desktop" :alt="`${product.name}  image`" class="desktop-image img-fluid" />
+					</div>
+				</div>
+				<div class="product-page__others"></div>
 			</div>
-			<div class="product-page__features flex">
-				<div class="product-page__feature flex flex-column">
-					<h3 class="heading-3 weight-700 text-uppercase">features</h3>
-					<p class="text-black-light body-regular weight-500" v-html="product.features"></p>
-				</div>
-				<div class="product-page__box flex flex-column">
-					<h3 class="heading-3 weight-700 text-uppercase">in the box</h3>
-					<ul class="flex flex-column gap-8">
-						<li v-for="item in product.includes" :key="item.item" class="body-regular flex items-center">
-							<span class="weight-700 text-primary">{{ item.quantity }}X</span>
-							<span class="weight-500 text-black-light">{{ item.item }}</span>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="product-page__gallery grid">
-				<div class="first br-8">
-					<img :src="product.gallery.first.mobile" :alt="`${product.name} image`" class="mobile-image img-fluid" />
-					<img :src="product.gallery.first.desktop" :alt="`${product.name} image`" class="desktop-image img-fluid" />
-				</div>
-				<div class="second br-8">
-					<img :src="product.gallery.second.mobile" :alt="`${product.name} image`" class="mobile-image img-fluid" />
-					<img :src="product.gallery.second.desktop" :alt="`${product.name} image`" class="desktop-image img-fluid" />
-				</div>
-				<div class="third br-8">
-					<img :src="product.gallery.third.mobile" :alt="`${product.name}  image`" class="mobile-image img-fluid" />
-					<img :src="product.gallery.third.desktop" :alt="`${product.name}  image`" class="desktop-image img-fluid" />
-				</div>
-			</div>
-			<div class="product-page__others"></div>
+			<CategoriesList />
 		</div>
-		<CategoriesList />
 	</div>
 </template>
 

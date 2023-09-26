@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const router = useRouter();
 const { setCurrentModal } = useStore();
+const { cartGrandTotal } = storeToRefs(useCartStore());
 
 const checkoutForm: Record<string, string> = reactive({
 	name: "",
@@ -67,7 +68,14 @@ const goBack = () => {
 						</div>
 					</section>
 				</div>
-				<div class="checkout-page__summary bg-white br-8">
+				<div class="checkout-page__summary bg-white br-8 flex flex-column">
+					<div class="flex flex-column gap-24">
+						<CartList usage="checkout" />
+						<p class="flex content-between">
+							<span class="text-black-light body-regular weight-500 text-uppercase">grand total</span>
+							<span class="text-primary weight-700 heading-6">$ {{ formatPriceWithCommas(cartGrandTotal) }}</span>
+						</p>
+					</div>
 					<BaseButton size="full" @click="setCurrentModal('order')">continue & pay</BaseButton>
 				</div>
 			</div>
@@ -106,6 +114,7 @@ const goBack = () => {
 
 	&__summary {
 		padding: 3.2rem 3.3rem;
+		@include gap(3.2rem);
 	}
 }
 

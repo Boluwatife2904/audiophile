@@ -19,7 +19,9 @@ const productsBelongingToCategory = products.filter((product) => product.categor
 				<ProductItem v-for="(product, index) in productsBelongingToCategory" :key="product.slug" :product="product" :is-new-product="index === 0" />
 			</div>
 		</div>
-		<CategoriesList />
+		<div class="container">
+			<CategoriesList />
+		</div>
 	</div>
 </template>
 
