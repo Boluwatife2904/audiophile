@@ -25,38 +25,17 @@ watch(
 		<LazyTheCTA v-if="shouldShowCTA" />
 	</main>
 	<TheFooter />
-	<BaseModal v-if="currentModal === 'menu'" usage="menu" @close-modal="setCurrentModal('')">
-		<CategoriesList />
-	</BaseModal>
-	<BaseModal v-if="currentModal === 'order'" usage="order" @close-modal="setCurrentModal('')">
-		<section class="order-modal d-flex flex-column items-start">
-			<div class="order-modal__header flex flex-column">
-				<IconCheck />
-				<div class="order-modal__text flex flex-column">
-					<h3 class="text-black weight-700 text-uppercase">
-						thank you
-						<br />
-						for your order
-					</h3>
-					<p class="body-regular weight-500 text-black-light">You will receive an email confirmation shortly.</p>
-				</div>
-			</div>
-			<BaseButton size="full">back to home</BaseButton>
-		</section>
-	</BaseModal>
-	<BaseModal v-if="currentModal === 'cart'" usage="cart" @close-modal="setCurrentModal('')">
-		<section class="flex flex-column gap-24">
-			<CartList usage="cart" />
-			<BaseButton size="full" @click="goToCheckout">checkout</BaseButton>
-		</section>
-	</BaseModal>
+
+	<LazyModalMobileMenu v-if="currentModal === 'menu'" />
+	<LazyModalOrderConfirmation v-if="currentModal === 'order'" />
+	<LazyModalCart v-if="currentModal === 'cart'" />
 </template>
 
 <style lang="scss" scoped>
 .order-modal {
 	&__header {
 		@include gap(2.3rem, 3.3rem);
-		@include margin-bottom(2.4rem, 3.3rem)
+		@include margin-bottom(2.4rem, 3.3rem);
 	}
 
 	&__text {

@@ -84,3 +84,27 @@
 	}
 
 }
+
+@mixin visibility($mob, $tab, $desk) {
+	display: $mob;
+
+	@media screen and (min-width: $tablet) {
+		display: $tab;
+	}
+
+	@media screen and (min-width: $desktop) {
+		display: $desk;
+	}
+}
+
+@mixin flex-direction($mob, $tab, $desk: $tab) {
+	flex-direction: $mob;
+
+	@media screen and (min-width: $tablet) {
+		flex-direction: $tab;
+	}
+
+	@media screen and (min-width: $desktop) {
+		flex-direction: $desk;
+	}
+}

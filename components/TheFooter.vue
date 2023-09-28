@@ -43,13 +43,9 @@ const footerSocials = [
 	}
 
 	&--top {
-		flex-direction: column;
+		@include flex-direction(column, column, row);
 		@include gap(4.8rem 3rem, 3.2rem 3rem);
 		@include margin-bottom(4.8rem, 3.2rem, 3.6rem);
-
-		@media screen and (min-width: $desktop) {
-			flex-direction: row;
-		}
 	}
 
 	&--middle {
@@ -61,11 +57,7 @@ const footerSocials = [
 	}
 
 	&--bottom {
-		flex-direction: column;
-
-		@media screen and (min-width: $tablet) {
-			flex-direction: row;
-		}
+		@include flex-direction(column, row);
 	}
 
 	&--bottom {

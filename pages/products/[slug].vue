@@ -4,7 +4,7 @@ const route = useRoute();
 const router = useRouter();
 const productSlug = route.params.slug;
 
-const product = products.find((product) => product.slug === productSlug);
+const product = products.find((product) => product.slug === productSlug) as Product;
 
 if (typeof product === "undefined") throw createError({ statusCode: 404, statusMessage: "Product not found", fatal: true });
 
@@ -44,7 +44,7 @@ const addToCart = () => {
 						<h3 class="heading-3 weight-700 text-uppercase">features</h3>
 						<p class="text-black-light body-regular weight-500" v-html="product.features"></p>
 					</div>
-					<div class="product-page__box flex flex-column">
+					<div class="product-page__box flex">
 						<h3 class="heading-3 weight-700 text-uppercase">in the box</h3>
 						<ul class="flex flex-column gap-8">
 							<li v-for="item in product.includes" :key="item.item" class="body-regular flex items-center">
@@ -54,18 +54,13 @@ const addToCart = () => {
 						</ul>
 					</div>
 				</div>
-				<div class="product-page__gallery grid">
-					<div class="first br-8">
-						<img :src="product.gallery.first.mobile" :alt="`${product.name} image`" class="mobile-image img-fluid" />
-						<img :src="product.gallery.first.desktop" :alt="`${product.name} image`" class="desktop-image img-fluid" />
-					</div>
-					<div class="second br-8">
-						<img :src="product.gallery.second.mobile" :alt="`${product.name} image`" class="mobile-image img-fluid" />
-						<img :src="product.gallery.second.desktop" :alt="`${product.name} image`" class="desktop-image img-fluid" />
-					</div>
-					<div class="third br-8">
-						<img :src="product.gallery.third.mobile" :alt="`${product.name}  image`" class="mobile-image img-fluid" />
-						<img :src="product.gallery.third.desktop" :alt="`${product.name}  image`" class="desktop-image img-fluid" />
+				<ProductItemGallery :product="product" />
+				<div class="product-page__also-like">
+					<div class="product-page__also-like__header">
+						<h3 class="heading-3 text-uppercase text-center weight-700">you may also like</h3>
+						<div class="product-page__also-like__grid grid">
+							<ProductAlsoLike v-for="item in product.others" :key="item.slug" :product="item" />
+						</div>
 					</div>
 				</div>
 				<div class="product-page__others"></div>
@@ -88,13 +83,9 @@ const addToCart = () => {
 	}
 
 	&__product {
+		@include flex-direction(column, row);
 		@include gap(3.2rem 7rem, 7rem, 12.5rem);
-		flex-direction: column;
 		width: 100%;
-
-		@media screen and (min-width: $tablet) {
-			flex-direction: row;
-		}
 	}
 
 	&__price {
@@ -111,11 +102,7 @@ const addToCart = () => {
 
 	&__features {
 		@include gap(8.8rem, 12rem, 12.5rem);
-		flex-direction: column;
-
-		@media screen and (min-width: $desktop) {
-			flex-direction: row;
-		}
+		@include flex-direction(column, column, row);
 
 		& > div {
 			@include gap(2.4rem, 2.4rem, 3.2rem);
@@ -129,46 +116,32 @@ const addToCart = () => {
 	}
 
 	&__box {
-		max-width: 35rem;
+		@include flex-direction(column, row, column);
+
+		& > * {
+			flex: 1;
+			@media screen and (min-width: $desktop) {
+				flex: initial;
+			}
+		}
+
+		@media screen and (min-width: $desktop) {
+			max-width: 35rem;
+		}
 
 		li {
 			@include gap(2.1rem, 2.1rem, 2.4rem);
 		}
 	}
 
-	&__gallery {
-		@include gap(2rem, 2rem 1.8rem, 3.2rem 3rem);
-		grid-template-rows: repeat(4, 17.4rem);
-
-		@media screen and (min-width: $tablet) {
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(2, 17.4rem);
+	&__also-like {
+		h3 {
+			@include margin-bottom(4rem, 5.6rem, 6.4rem);
 		}
 
-		@media screen and (min-width: $desktop) {
-			grid-template-rows: 28rem 28rem;
-		}
-
-		div {
-			overflow: hidden;
-		}
-
-		& > div:nth-child(3) {
-			grid-row: 3 / span 2;
-			// grid-column: 1 / span 2;
-
-			@media screen and (min-width: $tablet) {
-				grid-row: 1 / span 2;
-				grid-column: 2 / span 2;
-			}
-		}
-
-		img {
-			width: 100%;
-			height: 100%;
-			// object-fit: 50%;
-			object-fit: cover;
-			// object-position: top;
+		&__grid {
+			@include gap(5.6rem 1.1rem, 5.6rem 1.1rem, 3rem);
+			grid-template-columns: repeat(auto-fit, minmax(22.3rem, 1fr));
 		}
 	}
 }

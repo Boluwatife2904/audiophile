@@ -199,17 +199,9 @@ $value in $opacities {
 
 // PRODUCT IMAGES
 .desktop-image {
-	display: none;
-
-	@media screen and (min-width: $desktop) {
-		display: block;
-	}
+	@include visibility(none, none, block);
 }
 
 .mobile-image {
-	display: block;
-
-	@media screen and (min-width: $desktop) {
-		display: none;
-	}
+	@include visibility(block, block, none);
 }

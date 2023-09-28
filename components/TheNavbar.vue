@@ -27,18 +27,6 @@ const { setCurrentModal } = useStore();
 </template>
 
 <style lang="scss" scoped>
-@mixin visibility($mob, $tab, $desk) {
-	display: $mob;
-
-	@media screen and (min-width: $tablet) {
-		display: $tab;
-	}
-
-	@media screen and (min-width: $desktop) {
-		display: $desk;
-	}
-}
-
 .base-nav {
 	position: sticky;
 	top: 0;

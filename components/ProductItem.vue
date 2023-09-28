@@ -43,16 +43,10 @@ const viewProduct = (productSlug: string) => {
 <style lang="scss" scoped>
 .product-item {
 	@include gap(5.2rem, 5.2rem, 3.2rem);
-	flex-direction: column;
-
-	@media screen and (min-width: $desktop) {
-		flex-direction: row;
-	}
+	@include flex-direction(column, column, row);
 
 	&:nth-child(even) {
-		@media screen and (min-width: $desktop) {
-			flex-direction: row-reverse;
-		}
+		@include flex-direction(column, column, row-reverse);
 	}
 
 	&--top,

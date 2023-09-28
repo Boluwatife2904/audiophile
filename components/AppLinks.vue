@@ -17,11 +17,7 @@ const links = [
 
 <style lang="scss" scoped>
 .app-links {
-	flex-direction: column;
+	@include flex-direction(column, row);
 	@include gap(2rem 3.4rem);
-
-	@media screen and (min-width: $tablet) {
-		flex-direction: row;
-	}
 }
 </style>

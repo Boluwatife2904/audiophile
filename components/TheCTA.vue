@@ -24,12 +24,8 @@
 	@include padding(12rem 0, 12rem 0, 16rem 0);
 
 	&__container {
-		flex-direction: column-reverse;
+		@include flex-direction(column-reverse, column-reverse, row);
 		@include gap(4rem 0rem, 6.3rem 12.5rem);
-
-		@media screen and (min-width: $desktop) {
-			flex-direction: row;
-		}
 	}
 
 	&--left {
