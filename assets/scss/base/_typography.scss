@@ -1,5 +1,5 @@
 .heading-1 {
-	@include typography(3.6rem, 4rem, 5.6rem, 5.8rem, 5.6rem, 5.8rem);
+	@include typography(3.6rem, 4rem, 5.6rem, 5.8rem);
 	@include letter-spacing(0.1286rem, 0.2rem);
 }
 
@@ -14,8 +14,8 @@
 }
 
 .heading-4 {
-	@include typography(2rem, 2rem, 3rem, 3rem, 2.8rem, 3.8rem);
-	letter-spacing: 0.2rem
+	@include typography(2.8rem, 3.8rem);
+	@include letter-spacing(0.2rem);
 }
 
 .heading-5 {

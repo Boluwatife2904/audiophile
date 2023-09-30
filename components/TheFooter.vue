@@ -82,7 +82,7 @@ const footerSocials = [
 			}
 
 			@media screen and (min-width: $desktop) {
-				// top: -6rem;
+				top: -7.5rem;
 			}
 		}
 	}

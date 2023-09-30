@@ -3,7 +3,7 @@
 <template>
 	<section class="home-hero">
 		<TheNavbar />
-		<div class="container">
+		<div class="container flex items-center">
 			<div class="home-hero__text">
 				<span class="block text-uppercase">new product</span>
 				<h1 class="heading-1 text-white text-uppercase">XX99 Mark II Headphones</h1>
@@ -32,8 +32,6 @@
 	}
 
 	.container {
-		display: flex;
-		align-items: center;
 		height: 100%;
 	}
 
