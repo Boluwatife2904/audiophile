@@ -6,10 +6,6 @@ const router = useRouter();
 
 const shouldShowCTA = computed(() => route.name !== "checkout");
 
-const goToCheckout = () => {
-	router.push({ name: "checkout" });
-};
-
 watch(
 	() => route.fullPath,
 	() => {
@@ -19,7 +15,7 @@ watch(
 </script>
 
 <template>
-	<TheNavbar />
+	<TheNavbar v-if="route.name !== 'index'" />
 	<main :class="route.name === 'checkout' ? 'bg-gray' : 'bg-gray-light'">
 		<slot />
 		<LazyTheCTA v-if="shouldShowCTA" />

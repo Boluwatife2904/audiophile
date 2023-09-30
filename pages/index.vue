@@ -2,7 +2,7 @@
 
 <template>
 	<div class="home">
-		<div class="home-hero"></div>
+		<HomeHero />
 		<div class="home-content">
 			<div class="container">
 				<CategoriesList />

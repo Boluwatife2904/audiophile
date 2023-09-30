@@ -1,5 +1,10 @@
 <script setup lang="ts">
+const router = useRouter();
 const { setCurrentModal } = useStore();
+
+const goToCheckout = () => {
+	router.push({ name: "checkout" });
+};
 </script>
 
 <template>

@@ -1,9 +1,10 @@
 <script setup lang="ts">
 const { setCurrentModal } = useStore();
+const route = useRoute();
 </script>
 
 <template>
-	<nav class="base-nav bg-black">
+	<nav class="base-nav" :class="[route.name === 'index' ? 'bg-transparrent' : 'bg-black', { sticky: route.name !== 'index' }]">
 		<div class="container">
 			<div class="base-nav__content flex items-center content-between text-white">
 				<div class="base-nav--left flex items-center">
@@ -28,9 +29,13 @@ const { setCurrentModal } = useStore();
 
 <style lang="scss" scoped>
 .base-nav {
-	position: sticky;
-	top: 0;
-	z-index: 10;
+	position: relative;
+	z-index: 100;
+
+	&.sticky {
+		position: sticky;
+		top: 0;
+	}
 
 	&__content {
 		@include padding(3.5rem 0 3.7rem);
