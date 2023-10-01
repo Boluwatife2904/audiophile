@@ -17,7 +17,7 @@ const { usage = "checkout" } = defineProps<Props>();
 		<div class="cart-item--right flex content-between" :class="usage === 'cart' ? 'items-center' : 'items-start'">
 			<div class="cart-item__text">
 				<p class="body-regular weight-700 text-black">{{ item.shortName }}</p>
-				<p class="cart-item__price text-black-light weight-700">${{ formatPriceWithCommas(item.price) }}</p>
+				<p class="cart-item__price text-black-light weight-700">$ {{ formatPriceWithCommas(item.price) }}</p>
 			</div>
 			<p v-if="usage === 'checkout'" class="cart-item__count body-regular weight-700 text-black-light">x{{ item.count }}</p>
 			<ProductAddToCart v-else-if="usage === 'cart'" :count="item.count" :product-id="item.id" :update-state="true" usage="cart" />

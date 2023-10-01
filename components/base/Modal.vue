@@ -1,24 +1,27 @@
 <script setup lang="ts">
 interface Props {
 	usage?: string; // 'cart', 'menu', 'order'
+	isClosable?: boolean;
 }
 
 interface Emits {
 	(event: "close-modal"): void;
 }
 
-const { usage = "menu" } = defineProps<Props>();
+const { usage = "menu", isClosable = true } = defineProps<Props>();
 const emits = defineEmits<Emits>();
 const showModalContent = ref(false);
 const showModalWrapper = ref(false);
 
 const closeModal = () => {
-	showModalContent.value = false;
-	document.body.classList.remove("overflow-hidden");
-	setTimeout(() => {
-		showModalWrapper.value = false;
-		emits("close-modal");
-	}, 250);
+	if (isClosable) {
+		showModalContent.value = false;
+		document.body.classList.remove("overflow-hidden");
+		setTimeout(() => {
+			showModalWrapper.value = false;
+			emits("close-modal");
+		}, 250);
+	}
 };
 
 onMounted(() => {

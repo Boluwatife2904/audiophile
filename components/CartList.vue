@@ -39,10 +39,10 @@ const { clearCart } = useCartStore();
 			</template>
 		</div>
 	</section>
-	<section class="cart-list__empty flex items-center flex-column gap-16 text-center">
+	<section v-else class="cart-list__empty flex items-center flex-column gap-16 text-center">
 		<img src="/images/empty-cart.png" alt="empty cart illustration" />
-		<h6 class="heading-6 weight-600">Cart is empty!</h6>
-		<p class="body-regular weight-500">There's is nothing in your cart. Add items to continue</p>
+		<h6 class="heading-6 weight-700">Cart is empty!</h6>
+		<p class="body-regular weight-500">There is nothing in your cart. <br /> Add products to continue</p>
 	</section>
 </template>
 
@@ -66,7 +66,7 @@ const { clearCart } = useCartStore();
 
 	&__empty {
 		padding: 2.4rem 0;
-		
+
 		img {
 			height: 6.4rem;
 			width: 6.4rem;

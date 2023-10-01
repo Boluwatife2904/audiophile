@@ -10,14 +10,19 @@ if (typeof product === "undefined") throw createError({ statusCode: 404, statusM
 
 const { addItemToCart } = useCartStore();
 const count = ref(1);
+const haveAddedToCart = ref(false);
 
 const goBack = () => {
 	router.back();
 };
 
 const addToCart = () => {
+	haveAddedToCart.value = true;
 	addItemToCart({ productId: product.id, count: count.value });
 	count.value = 1;
+	setTimeout(() => {
+		haveAddedToCart.value = false;
+	}, 1000);
 };
 </script>
 
@@ -34,7 +39,7 @@ const addToCart = () => {
 							<h3 class="product-page__price heading-6 font-weight-700">$ {{ Number(product.price).toLocaleString() }}</h3>
 							<div class="product-page__add flex gap-16">
 								<ProductAddToCart :count="count" :update-state="false" usage="product" @increase-count="count += 1" @decrese-count="count -= 1" />
-								<BaseButton @click="addToCart">add to cart</BaseButton>
+								<BaseButton :disabled="haveAddedToCart" @click="addToCart">{{ haveAddedToCart ? "added to cart" : "add to cart" }}</BaseButton>
 							</div>
 						</div>
 					</div>
@@ -72,14 +77,14 @@ const addToCart = () => {
 
 <style lang="scss" scoped>
 .product-page {
-	padding-top: 8rem;
+	@include padding(1.6rem 0 0, 3.3rem 0 0, 8rem 0 0);
 
 	&__content {
 		@include gap(16rem);
 	}
 
 	&__header {
-		@include gap(5.6rem);
+		@include gap(2.4rem, 2.4rem, 5.6rem);
 	}
 
 	&__product {

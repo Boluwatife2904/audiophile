@@ -101,7 +101,7 @@ const images = ["desktop", "tablet", "mobile"];
 
 		&--mobile {
 			@include visibility(block, none, none);
-			top: -15%;
+			top: -17%;
 		}
 
 		&--tablet {

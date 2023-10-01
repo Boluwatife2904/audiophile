@@ -28,7 +28,7 @@ const productsBelongingToCategory = products.filter((product) => product.categor
 <style lang="scss" scoped>
 .category-page {
 	&__header {
-		padding: 9.8rem 2rem;
+		@include padding(3.2rem 2rem, 10.5rem 2rem 9.7rem, 9.8rem 2rem 9.7rem);
 	}
 
 	&__content {

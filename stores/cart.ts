@@ -16,8 +16,12 @@ export const useCartStore = defineStore("cartStore", () => {
 		}, 0);
 	});
 
+	const cartVAT = computed(() => {
+		return Math.floor(0.2 * cartTotal.value);
+	});
+
 	const cartGrandTotal = computed(() => {
-		return cartTotal.value + 50 + Math.floor(0.2 * cartTotal.value);
+		return cartTotal.value + 50 + cartVAT.value;
 	});
 
 	const addItemToCart = (payload: CartPayload) => {
@@ -45,5 +49,5 @@ export const useCartStore = defineStore("cartStore", () => {
 		cartItems.value = [];
 	};
 
-	return { cartItems, addItemToCart, removeItemFromCart, clearCart, cartProducts, cartTotal, reduceItemCountInCart, cartGrandTotal };
+	return { cartItems, addItemToCart, removeItemFromCart, clearCart, cartProducts, cartTotal, reduceItemCountInCart, cartGrandTotal, cartVAT };
 });

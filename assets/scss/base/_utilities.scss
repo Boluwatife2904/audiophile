@@ -67,6 +67,7 @@ $value in $items-alignment {
 $content-alignment: (
 	"content-center": center,
 	"content-between": space-between,
+	"content-end": end,
 );
 
 @each $name,
@@ -205,4 +206,9 @@ $value in $opacities {
 
 .mobile-image {
 	@include visibility(block, block, none);
+}
+
+// width classes
+.w-100 {
+	width: 100%;
 }
