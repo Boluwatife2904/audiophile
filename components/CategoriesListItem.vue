@@ -9,7 +9,7 @@ defineProps<Props>();
 <template>
 	<div class="category-item text-center position-relative flex flex-column">
 		<div class="category-item__image position-relative flex items-center content-center mx-auto">
-			<img :src="`/images/categories/${category}.png`" :alt="`${category} image`" class="img-fluid" loading="lazy" />
+			<NuxtImg :src="`/images/categories/${category}.png`" :alt="`${category} image`" class="img-fluid" loading="lazy" />
 			<span class="block position-absolute">
 				<svg xmlns="http://www.w3.org/2000/svg" width="183" height="102" viewBox="0 0 183 102" fill="none">
 					<g filter="url(#filter0_f_0_4622)">

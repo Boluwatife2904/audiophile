@@ -3,7 +3,7 @@
 <template>
 	<div class="home-zx7 flex flex-column content-center br-8">
 		<div class="home-zx7__content flex flex-column items-start">
-			<h4 class="heading-4">ZX7 SPEAKER</h4>
+			<p class="heading-4">ZX7 SPEAKER</p>
 			<BaseButton variant="secondary-outline" @click="navigateTo({ name: 'products-slug', params: { slug: 'zx7-speakers' } })">see product</BaseButton>
 		</div>
 	</div>

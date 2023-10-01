@@ -31,7 +31,7 @@ const addToCart = () => {
 		<div class="container">
 			<div class="product-page__content flex flex-column">
 				<div class="product-page__header flex flex-column items-start">
-					<button class="product-page__back body-regular text-black-light weight-500" @click="goBack">Go back</button>
+					<button class="product-page__back body-regular text-black-light weight-500" title="Go back" @click="goBack">Go back</button>
 					<div class="product-page__product flex items-center">
 						<ProductItemImage :product="product" usage="product" />
 						<div class="product-page__text">

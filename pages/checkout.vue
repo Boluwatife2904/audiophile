@@ -96,7 +96,7 @@ const createOrder = () => {
 <template>
 	<div class="checkout-page">
 		<div class="container flex flex-column items-start">
-			<button class="body-regular text-black-light weight-500 checkout-page__back" @click="goBack">Go back</button>
+			<button class="body-regular text-black-light weight-500 checkout-page__back" title="Go back" @click="goBack">Go back</button>
 			<div class="checkout-page__content grid items-start">
 				<div class="checkout-page__form bg-white br-8">
 					<h3 class="heading-3 text-uppercase weight-700 checkout-page__title">checkout</h3>

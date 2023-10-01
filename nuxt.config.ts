@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 			},
 			title: "AudioPhile | Home",
 			charset: "UTF-8",
-			viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+			viewport: "width=device-width, initial-scale=1",
 			meta: [
 				{ hid: "theme-color", name: "theme-color", content: "#635fc7" },
 				{ hid: "description", name: "description", content: "All in one stop to fulfill your audio needs" },
@@ -50,4 +50,5 @@ export default defineNuxtConfig({
 	imports: {
 		dirs: ["stores"],
 	},
+	image: { format: ["webp"] },
 });

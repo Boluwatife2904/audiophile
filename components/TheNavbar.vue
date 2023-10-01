@@ -8,7 +8,7 @@ const route = useRoute();
 		<div class="container">
 			<div class="base-nav__content flex items-center content-between text-white">
 				<div class="base-nav--left flex items-center">
-					<button class="base-nav__toggler position-relative flex flex-column item-start" @click="setCurrentModal('menu')">
+					<button class="base-nav__toggler position-relative flex flex-column item-start" title="Hamburger" @click="setCurrentModal('menu')">
 						<span class="bg-white block"></span>
 						<span class="bg-white block"></span>
 						<span class="bg-white block"></span>
@@ -20,7 +20,7 @@ const route = useRoute();
 					<span class="links"><AppLinks /></span>
 				</div>
 				<div class="base-nav--right">
-					<button class="lh-0" @click="setCurrentModal('cart')"><IconCart /></button>
+					<button class="lh-0" title="Cart" @click="setCurrentModal('cart')"><IconCart /></button>
 				</div>
 			</div>
 		</div>

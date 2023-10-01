@@ -8,7 +8,7 @@
 			<img src="/images/yx1-desktop.png" alt="YX1 earphones" class="img-fluid br-8 desktop" loading="lazy" />
 		</div>
 		<div class="home-yx1--right bg-gray flex flex-column items-start content-center br-8">
-			<h4 class="heading-4">YX1 EARPHONES</h4>
+			<p class="heading-4">YX1 EARPHONES</p>
 			<BaseButton variant="secondary-outline" @click="navigateTo({ name: 'products-slug', params: { slug: 'yx1-earphones' } })">see product</BaseButton>
 		</div>
 	</div>

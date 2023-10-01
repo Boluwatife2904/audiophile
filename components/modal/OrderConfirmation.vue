@@ -43,7 +43,7 @@ const clearCartAndNavigateHome = () => {
 							<CartListItem v-for="(item, index) in restOfOrderItems" :key="index" :item="item" />
 						</template>
 					</div>
-					<button v-if="haveMoreThanOneOrderItem" class="weight-700 order-data__toggler text-center w-100 block text-center" :class="{ 'order-data__toggler--open': isShowingRestOfItems }" @click="isShowingRestOfItems = !isShowingRestOfItems">
+					<button v-if="haveMoreThanOneOrderItem" class="weight-700 order-data__toggler text-center w-100 block text-center" :class="{ 'order-data__toggler--open': isShowingRestOfItems }" title="View more" @click="isShowingRestOfItems = !isShowingRestOfItems">
 						<template v-if="isShowingRestOfItems">View less</template>
 						<template v-else>and {{ restOfOrderItems.length }} other item(s)</template>
 					</button>

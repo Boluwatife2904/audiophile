@@ -35,9 +35,9 @@ const decreaseProductCount = () => {
 
 <template>
 	<div class="add-to-cart bg-gray flex items-center content-between" :class="`add-to-cart--${usage}`">
-		<button class="add-to-cart__button weight-700 flex items-center content-center" :disabled="!updateState && count === 1" @click="decreaseProductCount">-</button>
+		<button class="add-to-cart__button weight-700 flex items-center content-center" title="Reduce Count" :disabled="!updateState && count === 1" @click="decreaseProductCount">-</button>
 		<span class="add-to-cart__count weight-700 flex items-center content-center">{{ count }}</span>
-		<button class="add-to-cart__button weight-700 flex items-center content-center" @click="increaseProductCount">+</button>
+		<button class="add-to-cart__button weight-700 flex items-center content-center" title="Increase count" @click="increaseProductCount">+</button>
 	</div>
 </template>
 

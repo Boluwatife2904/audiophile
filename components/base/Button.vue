@@ -2,10 +2,11 @@
 interface Props {
 	variant?: string;
 	size?: string;
+	title?: string;
 	disabled?: boolean
 }
 
-const { variant = "primary", size = "normal", disabled = false } = defineProps<Props>();
+const { variant = "primary", size = "normal", disabled = false, title = '' } = defineProps<Props>();
 
 const buttonClasses = computed(() => {
 	return ["variant", "size"].map((item) => {
@@ -16,7 +17,7 @@ const buttonClasses = computed(() => {
 </script>
 
 <template>
-	<button class="base-button weight-700 text-uppercase" :class="buttonClasses" :disabled="disabled">
+	<button class="base-button weight-700 text-uppercase" :class="buttonClasses" :disabled="disabled" :title="title">
 		<slot />
 	</button>
 </template>

@@ -17,7 +17,7 @@ const { clearCart } = useCartStore();
 				<template v-if="usage === 'cart'">cart ({{ cartProducts.length }})</template>
 				<template v-else-if="usage === 'checkout'">summary</template>
 			</h6>
-			<button v-if="usage === 'cart'" class="text-black-light body-regular weight-500 cart-list__remove" @click="clearCart">Remove all</button>
+			<button v-if="usage === 'cart'" class="text-black-light body-regular weight-500 cart-list__remove" title="Clear Cart" @click="clearCart">Remove all</button>
 		</div>
 		<ul class="flex flex-column gap-24">
 			<CartListItem v-for="item in cartProducts" :index="item.id" :item="item" :usage="usage" />
@@ -40,9 +40,13 @@ const { clearCart } = useCartStore();
 		</div>
 	</section>
 	<section v-else class="cart-list__empty flex items-center flex-column gap-16 text-center">
-		<img src="/images/empty-cart.png" alt="empty cart illustration" loading="lazy" />
+		<NuxtImg src="/images/empty-cart.png" alt="empty cart illustration" loading="lazy" />
 		<h6 class="heading-6 weight-700">Cart is empty!</h6>
-		<p class="body-regular weight-500">There is nothing in your cart. <br /> Add products to continue</p>
+		<p class="body-regular weight-500">
+			There is nothing in your cart.
+			<br />
+			Add products to continue
+		</p>
 	</section>
 </template>
 
