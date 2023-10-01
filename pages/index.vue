@@ -20,7 +20,6 @@
 .home {
 	&-content {
 		padding: 12rem 0 0;
-		margin-bottom: 4rem;
 
 		&__products {
 			@include gap(3.2rem, 4.8rem);

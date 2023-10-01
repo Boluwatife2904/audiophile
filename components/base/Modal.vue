@@ -55,19 +55,15 @@ onUnmounted(() => {
 	width: 100vw;
 	height: calc(100vh - 9.7rem);
 	background-color: rgb(0, 0, 0, 0.4);
-	// top: 9.7rem;
-	// top: 0;
 	left: 0;
 	bottom: 0;
 	z-index: 10;
 	overflow-y: auto;
 
 	&__container {
-		// padding: 3rem 2rem;
 		min-height: 100%;
 		margin: auto;
 		max-width: 117.4rem;
-		// overflow-y: auto;
 
 		&--cart {
 			@include padding(3.2rem);
@@ -79,7 +75,6 @@ onUnmounted(() => {
 			align-items: start;
 			justify-content: start;
 			padding-bottom: 3.2rem;
-			// min-height: auto;
 		}
 
 		&--order {
@@ -92,7 +87,6 @@ onUnmounted(() => {
 	&__content {
 		margin: 0;
 		width: 100%;
-		// overflow-y: auto;
 
 		&--cart {
 			max-width: 37.7rem;
@@ -102,7 +96,6 @@ onUnmounted(() => {
 			max-width: 100%;
 			border-top-left-radius: 0 !important;
 			border-top-right-radius: 0 !important;
-			// max-height: 50vh;
 		}
 
 		&--order {
@@ -118,7 +111,6 @@ onUnmounted(() => {
 		}
 
 		&--menu {
-			// padding: 100%;
 			@include padding(4.4rem 2.4rem 6rem, 4.8rem 2.4rem 11.2rem);
 		}
 

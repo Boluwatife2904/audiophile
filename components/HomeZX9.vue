@@ -17,7 +17,7 @@ const images = ["desktop", "tablet", "mobile"];
 						speakers
 					</h1>
 					<p class="body-regular">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-					<BaseButton variant="secondary">see product</BaseButton>
+					<BaseButton variant="secondary" @click="navigateTo({ name: 'products-slug', params: { slug: 'zx9-speakers' } })">see product</BaseButton>
 				</div>
 			</div>
 		</div>

@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const route = useRoute();
+</script>
 
 <template>
-	<section class="cta">
+	<section class="cta" :class="{ 'cta--index': route.name === 'index' }">
 		<div class="container cta__container flex items-center">
 			<div class="cta--left flex flex-column">
 				<h2 class="heading-2 weight-700 text-uppercase text-black">
@@ -22,6 +24,10 @@
 <style lang="scss" scoped>
 .cta {
 	@include padding(12rem 0, 12rem 0, 16rem 0);
+
+	&--index {
+		@include padding(12rem 0, 9.6rem 0, 20rem 0);
+	}
 
 	&__container {
 		@include flex-direction(column-reverse, column-reverse, row);

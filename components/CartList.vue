@@ -11,7 +11,7 @@ const { clearCart } = useCartStore();
 </script>
 
 <template>
-	<section class="cart-list">
+	<section v-if="cartProducts.length > 0" class="cart-list">
 		<div class="cart-list__header flex items-center content-between">
 			<h6 class="heading-6 weight-700 text-black text-uppercase">
 				<template v-if="usage === 'cart'">cart ({{ cartProducts.length }})</template>
@@ -39,6 +39,11 @@ const { clearCart } = useCartStore();
 			</template>
 		</div>
 	</section>
+	<section class="cart-list__empty flex items-center flex-column gap-16 text-center">
+		<img src="/images/empty-cart.png" alt="empty cart illustration" />
+		<h6 class="heading-6 weight-600">Cart is empty!</h6>
+		<p class="body-regular weight-500">There's is nothing in your cart. Add items to continue</p>
+	</section>
 </template>
 
 <style lang="scss" scoped>
@@ -57,6 +62,20 @@ const { clearCart } = useCartStore();
 
 	&__totals {
 		margin-top: 3.2rem;
+	}
+
+	&__empty {
+		padding: 2.4rem 0;
+		
+		img {
+			height: 6.4rem;
+			width: 6.4rem;
+			object-fit: cover;
+		}
+
+		p {
+			color: rgba(0, 0, 0, 0.5);
+		}
 	}
 }
 </style>

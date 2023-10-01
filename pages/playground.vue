@@ -217,7 +217,6 @@ const selectedOption = ref("");
 
 		@media screen and (min-width: $desktop) {
 			grid-template-columns: 51.6rem auto;
-			// grid-template-columns: repeat(auto-fit, minmax(5.16rem, auto));
 		}
 	}
 

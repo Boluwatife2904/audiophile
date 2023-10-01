@@ -35,7 +35,6 @@ const footerSocials = [
 <style lang="scss" scoped>
 .footer {
 	@include padding(5.2rem 0 3.8rem, 6rem 0 4.6rem, 7.5rem 0 4.8rem);
-	// min-height: 36.5rem;
 	text-align: center;
 
 	@media screen and (min-width: $tablet) {
