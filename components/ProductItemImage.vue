@@ -9,8 +9,8 @@ const { usage = "category" } = defineProps<Props>();
 
 <template>
 	<div class="product-item__image br-8 flex items-start content-center bg-gray position-relative" :class="`product-item__image--${usage}`">
-		<img :src="product.image.desktop" :alt="`${product.name} image`" class="img-fluid desktop-image" loading="lazy" />
-		<img :src="product.image.mobile" :alt="`${product.name} image`" class="img-fluid mobile-image" loading="lazy" />
+		<NuxtImg format="webp" :src="product.image.desktop" :alt="`${product.name} image`" class="img-fluid desktop-image" loading="lazy" />
+		<NuxtImg format="webp" :src="product.image.mobile" :alt="`${product.name} image`" class="img-fluid mobile-image" loading="lazy" />
 		<span class="block position-absolute">
 			<svg xmlns="http://www.w3.org/2000/svg" width="253" height="123" viewBox="0 0 253 123" fill="none">
 				<g opacity="0.152113" filter="url(#filter0_f_0_4765)">

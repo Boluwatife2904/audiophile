@@ -11,7 +11,7 @@ const { usage = "checkout" } = defineProps<Props>();
 	<li class="cart-item flex gap-16 items-center">
 		<div class="cart-item--left flex items-center gap-16">
 			<div class="cart-item__image br-8 bg-gray">
-				<img :src="item.image.mobile" :alt="`${item.name} image`" class="img-fluid" loading="lazy" />
+				<NuxtImg format="webp" :src="item.image.mobile" :alt="`${item.name} image`" class="img-fluid" loading="lazy" />
 			</div>
 		</div>
 		<div class="cart-item--right flex content-between" :class="usage === 'cart' ? 'items-center' : 'items-start'">

@@ -50,5 +50,4 @@ export default defineNuxtConfig({
 	imports: {
 		dirs: ["stores"],
 	},
-	image: { format: ["webp"] },
 });
