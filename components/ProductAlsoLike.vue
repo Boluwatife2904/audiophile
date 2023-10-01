@@ -22,8 +22,8 @@ const seeProduct = () => {
 <template>
 	<div class="product-like flex flex-column">
 		<div class="product-like__image flex items-center content-center bg-gray br-8">
-			<img :src="product.image.desktop" :alt="`${product.name} image`" class="img-fluid desktop-image" />
-			<img :src="product.image.mobile" :alt="`${product.name} image`" class="img-fluid mobile-image" />
+			<img :src="product.image.desktop" :alt="`${product.name} image`" class="img-fluid desktop-image" loading="lazy" />
+			<img :src="product.image.mobile" :alt="`${product.name} image`" class="img-fluid mobile-image" loading="lazy" />
 		</div>
 		<div class="product-like__content flex flex-column items-center">
 			<h3 class="product-like__name text-uppercase weight-700">{{ product.name }}</h3>

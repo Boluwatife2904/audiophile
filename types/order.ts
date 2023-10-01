@@ -8,7 +8,7 @@ interface ShippingData {
 interface UserData {
 	name: string;
 	email: string;
-	phoneNumber: number;
+	phoneNumber: string;
 }
 
 interface PaymentData {
@@ -23,5 +23,9 @@ interface Order {
 	orderItems: CartProduct[];
 	shippingData: ShippingData,
 	userData: UserData,
-	paymentData: PaymentData
+	paymentData: PaymentData,
+	total: number,
+	shipping: number,
+	vat: number,
+	grandTotal: number,
 }

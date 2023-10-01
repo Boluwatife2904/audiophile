@@ -74,7 +74,7 @@ const createOrder = () => {
 	};
 	const paymentData = {
 		method: checkoutForm.paymentMethod,
-		...(checkoutForm.payment === "eMoney" && { card: "", pin: "" }),
+		...(checkoutForm.payment === "eMoney" && { card: checkoutForm.paymentCard, pin: checkoutForm.paymentPin }),
 	};
 	const order = {
 		orderId: Math.floor(Math.random() * 10000000000),

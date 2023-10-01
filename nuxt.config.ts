@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	devtools: { enabled: true },
+	devtools: { enabled: false },
 	app: {
 		head: {
 			htmlAttrs: {
@@ -11,13 +11,13 @@ export default defineNuxtConfig({
 			viewport: "width=device-width, initial-scale=1, maximum-scale=1",
 			meta: [
 				{ hid: "theme-color", name: "theme-color", content: "#635fc7" },
-				{ hid: "description", name: "description", content: "Flow your way to productivity: Your tasks, simplified with Kanban!" },
-				{ hid: "og:description", name: "og:description", content: "Flow your way to productivity: Your tasks, simplified with Kanban!" },
-				{ hid: "twitter:description", name: "twitter:description", content: "Flow your way to productivity: Your tasks, simplified with Kanban!" },
-				{ hid: "og:title", name: "og:title", content: "Kanban | Home" },
-				{ hid: "twitter:title", name: "twitter:title", content: "Kanban | Home" },
-				{ hid: "og:site_name", name: "og:site_name", content: "Kanban" },
-				{ hid: "og:url", name: "og:url", content: "https://kanban-lemon-nu.vercel.app" },
+				{ hid: "description", name: "description", content: "All in one stop to fulfill your audio needs" },
+				{ hid: "og:description", name: "og:description", content: "All in one stop to fulfill your audio needs" },
+				{ hid: "twitter:description", name: "twitter:description", content: "All in one stop to fulfill your audio needs" },
+				{ hid: "og:title", name: "og:title", content: "Audiophile | Home" },
+				{ hid: "twitter:title", name: "twitter:title", content: "Audiophile | Home" },
+				{ hid: "og:site_name", name: "og:site_name", content: "Audiophile" },
+				{ hid: "og:url", name: "og:url", content: "https://audiophile-chi-indol.vercel.app/" },
 				{ hid: "og:type", name: "og:type", content: "website" },
 				{ hid: "og:image", name: "og:image", content: "https://res.cloudinary.com/juwon-tech/image/upload/v1690890263/Screenshot_2023-08-01_at_12.42.53_ozhoqb.png" },
 				{ hid: "twitter:image", name: "twitter:image", content: "https://res.cloudinary.com/juwon-tech/image/upload/v1690890263/Screenshot_2023-08-01_at_12.42.53_ozhoqb.png" },
@@ -43,7 +43,7 @@ export default defineNuxtConfig({
 		},
 	},
 	css: ["@/assets/scss/index.scss", "@/assets/scss/fonts.scss"],
-	modules: ["@pinia/nuxt"],
+	modules: ["@pinia/nuxt", "@nuxt/image"],
 	pinia: {
 		autoImports: ["defineStore", "storeToRefs"],
 	},

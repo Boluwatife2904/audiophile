@@ -22,7 +22,7 @@ const footerSocials = [
 				<p class="footer__copyright text-white-light weight-700">Copyright 2021. All Rights Reserved</p>
 				<ul class="footer__socials flex items-center">
 					<li v-for="social in footerSocials" :key="social.name" class="footer__social">
-						<a :href="social.url" target="_blank" rel="noopener noreferrer" class="base-link base-link--navigation">
+						<a :href="social.url" target="_blank" rel="noopener noreferrer" class="base-link base-link--navigation" :title="social.name">
 							<IconSocials :variant="social.icon" />
 						</a>
 					</li>
