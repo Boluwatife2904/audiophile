@@ -12,16 +12,16 @@
 <style lang="scss" scoped>
 .home-zx7 {
 	height: 32rem;
-	background-image: url("@/assets/images/zx7-mobile.webp");
+	background-image: url("/zx7-mobile.webp");
 	background-repeat: no-repeat;
 	background-size: cover;
 
 	@media screen and (min-width: $tablet) {
-		background-image: url("@/assets/images/zx7-tablet.webp");
+		background-image: url("/zx7-tablet.webp");
 	}
 
 	@media screen and (min-width: $desktop) {
-		background-image: url("@/assets/images/zx7-desktop.webp");
+		background-image: url("/zx7-desktop.webp");
 	}
 
 	&__content {
