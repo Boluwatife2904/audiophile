@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import products from "@/data/products.json";
 const route = useRoute();
-const categoryName = route.params.slug;
+const categoryName = route.params.slug as string;
 const categoryExists = products.some((product) => product.category === categoryName);
 
 if (!categoryExists) throw createError({ statusCode: 404, statusMessage: "Category does not exist", fatal: true });
 
+useSeoMeta({
+	title: `Audiophile | ${categoryName.toUpperCase()}`
+})
 const productsBelongingToCategory = products.filter((product) => product.category === categoryName).reverse();
 </script>
 

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+useSeoMeta({
+	title: "Audiophile | Checkout"
+})
 import { useVuelidate } from "@vuelidate/core";
 import { required, requiredIf, email } from "@vuelidate/validators";
 

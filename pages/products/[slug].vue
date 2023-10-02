@@ -8,6 +8,13 @@ const product = products.find((product) => product.slug === productSlug) as Prod
 
 if (typeof product === "undefined") throw createError({ statusCode: 404, statusMessage: "Product not found", fatal: true });
 
+useSeoMeta({
+	title: `Audiophile | ${product.name}`,
+	ogTitle: `Audiophile | ${product.name}`,
+	description: `Audiophile | ${product.description}`,
+	ogDescription: `Audiophile | ${product.description}`,
+});
+
 const { addItemToCart } = useCartStore();
 const count = ref(1);
 const haveAddedToCart = ref(false);
