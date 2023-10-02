@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { setCurrentModal } = useStore();
+const { cartItems } = useCartStore()
 const route = useRoute();
 </script>
 
@@ -20,7 +21,10 @@ const route = useRoute();
 					<span class="links"><AppLinks /></span>
 				</div>
 				<div class="base-nav--right">
-					<button class="lh-0" title="Cart" @click="setCurrentModal('cart')"><IconCart /></button>
+					<button class="lh-0 position-relative" title="Cart" @click="setCurrentModal('cart')">
+						<IconCart />
+						<span v-if="cartItems.length > 0" class="dot block bg-primary position-absolute"></span>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -67,5 +71,13 @@ const route = useRoute();
 
 .links {
 	@include visibility(none, none, block);
+}
+
+.dot {
+	height: 1rem;
+	width: 1rem;
+	border-radius: 50%;
+	right: -0.5rem;
+	top: -0.5rem;
 }
 </style>
