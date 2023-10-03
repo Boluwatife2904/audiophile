@@ -9,16 +9,16 @@ defineProps<Props>();
 <template>
 	<section class="product-gallery grid">
 		<div class="first br-8">
-			<NuxtImg format="webp" :src="product.gallery.first.mobile" :alt="`${product.name} image`" class="mobile-image img-fluid" loading="lazy" />
-			<NuxtImg format="webp" :src="product.gallery.first.desktop" :alt="`${product.name} image`" class="desktop-image img-fluid" loading="lazy" />
+			<img :src="product.gallery.first.mobile" :alt="`${product.name} image`" class="mobile-image img-fluid" loading="lazy" />
+			<img :src="product.gallery.first.desktop" :alt="`${product.name} image`" class="desktop-image img-fluid" loading="lazy" />
 		</div>
 		<div class="second br-8">
-			<NuxtImg format="webp" :src="product.gallery.second.mobile" :alt="`${product.name} image`" class="mobile-image img-fluid" loading="lazy" />
-			<NuxtImg format="webp" :src="product.gallery.second.desktop" :alt="`${product.name} image`" class="desktop-image img-fluid" loading="lazy" />
+			<img :src="product.gallery.second.mobile" :alt="`${product.name} image`" class="mobile-image img-fluid" loading="lazy" />
+			<img :src="product.gallery.second.desktop" :alt="`${product.name} image`" class="desktop-image img-fluid" loading="lazy" />
 		</div>
 		<div class="third br-8">
-			<NuxtImg format="webp" :src="product.gallery.third.mobile" :alt="`${product.name}  image`" class="mobile-image img-fluid" loading="lazy" />
-			<NuxtImg format="webp" :src="product.gallery.third.desktop" :alt="`${product.name}  image`" class="desktop-image img-fluid" loading="lazy" />
+			<img :src="product.gallery.third.mobile" :alt="`${product.name}  image`" class="mobile-image img-fluid" loading="lazy" />
+			<img :src="product.gallery.third.desktop" :alt="`${product.name}  image`" class="desktop-image img-fluid" loading="lazy" />
 		</div>
 	</section>
 </template>

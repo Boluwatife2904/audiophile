@@ -51,18 +51,18 @@ const route = useRoute();
 	&--right {
 		height: auto;
 		width: 100%;
-		background-image: url("/images/cta-mobile.png");
+		background-image: url("/images/cta-mobile.webp");
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: top;
 		min-height: 30rem;
 
 		@media screen and (min-width: $tablet) {
-			background-image: url("/images/cta-tablet.png");
+			background-image: url("/images/cta-tablet.webp");
 		}
 
 		@media screen and (min-width: $desktop) {
-			background-image: url("/images/cta-desktop.png");
+			background-image: url("/images/cta-desktop.webp");
 			max-width: 54rem;
 			min-height: 58.8rem;
 		}

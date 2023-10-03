@@ -3,12 +3,12 @@
 <template>
 	<div class="home-yx1 grid">
 		<div class="home-yx1--left br-8">
-			<NuxtImg format="webp" src="/images/yx1-mobile.png" alt="YX1 earphones" class="img-fluid br-8 mobile" loading="lazy" />
-			<NuxtImg format="webp" src="/images/yx1-tablet.png" alt="YX1 earphones" class="img-fluid br-8 tablet" loading="lazy" />
-			<NuxtImg format="webp" src="/images/yx1-desktop.png" alt="YX1 earphones" class="img-fluid br-8 desktop" loading="lazy" />
+			<img src="/images/yx1-mobile.webp" alt="YX1 earphones" class="img-fluid br-8 mobile" loading="lazy" />
+			<img src="/images/yx1-tablet.webp" alt="YX1 earphones" class="img-fluid br-8 tablet" loading="lazy" />
+			<img src="/images/yx1-desktop.webp" alt="YX1 earphones" class="img-fluid br-8 desktop" loading="lazy" />
 		</div>
 		<div class="home-yx1--right bg-gray flex flex-column items-start content-center br-8">
-			<p class="heading-4">YX1 EARPHONES</p>
+			<p class="heading-4 weight-700">YX1 EARPHONES</p>
 			<BaseButton variant="secondary-outline" @click="navigateTo({ name: 'products-slug', params: { slug: 'yx1-earphones' } })">see product</BaseButton>
 		</div>
 	</div>

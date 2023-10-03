@@ -3,7 +3,7 @@
 <template>
 	<div class="home-zx7 flex flex-column content-center br-8">
 		<div class="home-zx7__content flex flex-column items-start">
-			<p class="heading-4">ZX7 SPEAKER</p>
+			<p class="heading-4 weight-700">ZX7 SPEAKER</p>
 			<BaseButton variant="secondary-outline" @click="navigateTo({ name: 'products-slug', params: { slug: 'zx7-speakers' } })">see product</BaseButton>
 		</div>
 	</div>
@@ -12,16 +12,16 @@
 <style lang="scss" scoped>
 .home-zx7 {
 	height: 32rem;
-	background-image: url("@/assets/images/zx7-mobile.png");
+	background-image: url("@/assets/images/zx7-mobile.webp");
 	background-repeat: no-repeat;
 	background-size: cover;
 
 	@media screen and (min-width: $tablet) {
-		background-image: url("@/assets/images/zx7-tablet.png");
+		background-image: url("@/assets/images/zx7-tablet.webp");
 	}
 
 	@media screen and (min-width: $desktop) {
-		background-image: url("@/assets/images/zx7-desktop.png");
+		background-image: url("@/assets/images/zx7-desktop.webp");
 	}
 
 	&__content {

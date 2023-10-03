@@ -16,7 +16,7 @@
 
 <style lang="scss" scoped>
 .home-hero {
-	background-image: url("@/assets/images/hero-bg-mobile.png");
+	background-image: url("@/assets/images/hero-bg-mobile.webp");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -24,11 +24,11 @@
 
 	@media screen and (min-width: $tablet) {
 		height: 72.9rem;
-		background-image: url("@/assets/images/hero-bg-tablet.png");
+		background-image: url("@/assets/images/hero-bg-tablet.webp");
 	}
 
 	@media screen and (min-width: $desktop) {
-		background-image: url("@/assets/images/hero-bg-desktop.png");
+		background-image: url("@/assets/images/hero-bg-desktop.webp");
 	}
 
 	.container {

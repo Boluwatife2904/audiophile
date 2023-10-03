@@ -8,11 +8,6 @@ interface Product {
 		desktop: string;
 	};
 	category: string;
-	categoryImage: {
-		mobile: string;
-		tablet: string;
-		desktop: string;
-	};
 	new: boolean;
 	price: number;
 	description: string;

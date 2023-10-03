@@ -4,10 +4,10 @@ const images = ["desktop", "tablet", "mobile"];
 
 <template>
 	<div class="home-zx9 br-8 bg-primary position-relative flex content-center">
-		<NuxtImg format="webp" v-for="image in images" :key="image" :src="`/images/oval-${image}.png`" alt="oval shapes" :class="`position-absolute img-fluid oval oval--${image}`" loading="lazy" />
+		<img v-for="image in images" :key="image" :src="`/images/oval-${image}.webp`" alt="oval shapes" :class="`position-absolute img-fluid oval oval--${image}`" loading="lazy" />
 		<div class="home-zx9__content flex items-start content-between">
 			<div class="home-zx9__content--left">
-				<NuxtImg format="webp" src="/images/zx9-desktop.png" alt="ZX9 speakers" class="img-fluid" loading="lazy" />
+				<img src="/images/zx9-desktop.webp" alt="ZX9 speakers" class="img-fluid" loading="lazy" />
 			</div>
 			<div class="home-zx9__content--right">
 				<div class="home-zx9__text">

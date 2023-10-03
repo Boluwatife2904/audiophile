@@ -40,7 +40,7 @@ const { clearCart } = useCartStore();
 		</div>
 	</section>
 	<section v-else class="cart-list__empty flex items-center flex-column gap-16 text-center">
-		<NuxtImg format="webp" src="/images/empty-cart.png" alt="empty cart illustration" loading="lazy" />
+		<img src="/images/empty-cart.webp" alt="empty cart illustration" loading="lazy" />
 		<h6 class="heading-6 weight-700">Cart is empty!</h6>
 		<p class="body-regular weight-500">
 			There is nothing in your cart.
