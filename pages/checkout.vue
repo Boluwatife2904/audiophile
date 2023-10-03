@@ -11,14 +11,14 @@ const { setOrderData } = useOrderStore();
 const { cartTotal, cartVAT, cartGrandTotal, cartItems, cartProducts } = storeToRefs(useCartStore());
 
 const checkoutForm: Record<string, string> = reactive({
-	name: "Victor Sanusi",
-	email: "sanvicola2000@gmail.com",
-	phoneNumber: "+234123456789",
-	address: "12, Makanjuola way,",
-	zipCode: "101122",
-	city: "Lagos",
-	country: "Nigeria",
-	paymentMethod: "cod",
+	name: "",
+	email: "",
+	phoneNumber: "",
+	address: "",
+	zipCode: "",
+	city: "",
+	country: "",
+	paymentMethod: "",
 	paymentCard: "",
 	paymentPin: "",
 });
